@@ -4,6 +4,18 @@ document.addEventListener('DOMContentLoaded', function(){
     const form = document.getElementById('depositForm');
     const mensaje = document.getElementById('mensaje');
 
+    const obtenerSaldoActual = () => parseFloat(localStorage.getItem('saldo')) || 0;
+
+    const mostrarSaldoActual = () => {
+        const saldo = obtenerSaldoActual();
+        const saldoInfo = document.createElement('p');
+        saldoInfo.id = 'saldoInfo';
+        saldoInfo.innerHTML = `<strong>Saldo actual: $${saldo.toFixed(2)}</strong>`;
+        form.insertBefore(saldoInfo, form.firstChild);
+    };
+
+
+
     let transacciones = [];
     try { 
         const transStr = localStorage.getItem('transacciones');
@@ -14,7 +26,8 @@ document.addEventListener('DOMContentLoaded', function(){
         console.error('Error con la transaccion', e);
         transacciones = [];
     }
-
+    mostrarSaldoActual();
+    
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         const monto = parseFloat(document.getElementById('monto').value);
