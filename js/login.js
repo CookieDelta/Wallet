@@ -13,8 +13,13 @@ document.addEventListener('DOMContentLoaded', function(){
 
         if (user === USUARIO.usuario && pass === USUARIO.password) {
             localStorage.setItem('loggedIn', 'true');
-            localStorage.setItem('saldo', '1000');
+            
+            if (!localStorage.getItem('saldo')){
+                localStorage.setItem('saldo', '1000');
+            }
+            if (!localStorage.getItem('transacciones')){
             localStorage.setItem('transacciones', JSON.stringify([]));
+            }
             window.location.href = 'menu.html';
             
         } 
