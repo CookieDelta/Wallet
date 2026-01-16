@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function(){
     
-    const USUARIO = {usuario: 'test', password: '1234'};
+    const USUARIO = [{usuario: 'test', password: '1234'},
+                    {usuario: 'cosa', password: 'cosa'}
+    ];
     
     const form = document.getElementById('loginForm');
 
@@ -11,8 +13,11 @@ document.addEventListener('DOMContentLoaded', function(){
         const user= document.getElementById('usuario').value;
         const pass= document.getElementById('password').value;
 
-        if (user === USUARIO.usuario && pass === USUARIO.password) {
+        const usuarioValido = USUARIO.find(u => u.usuario === user && u.password ===pass);
+
+        if (usuarioValido) {
             localStorage.setItem('loggedIn', 'true');
+            localStorage.setItem('username', user)
             
             if (!localStorage.getItem('saldo')){
                 localStorage.setItem('saldo', '1000');

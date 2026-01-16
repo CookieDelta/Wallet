@@ -12,14 +12,15 @@
 <body class="min-vh-100 menu-bg page-enter">
     <div class="container py-5">
         
-        <div class="d-flex justify-content-between align-items-center mb-5">
+        <div class="d-flex justify-content-between align-items-center mb-5 bg-white p-4 rounded-4 shadow-sm">
             <div>
-                <h1 class="h2 fw-bold text-primary mb-1">Realizar depósito</h1>
-                <p class="text-muted">Agrega dinero a tu cuenta Alke Wallet</p>
+            <h1 class="h2 fw-bold text-primary mb-0 d-inline">Realizar depósito
+                <span class="text-muted fst-italic ms-2 small" style="vertical-align: middle">Agrega dinero a tu cuenta Alke Wallet</span>
+            </h1>
             </div>
             <div>
-                <a href="menu.html" class="btn btn-outline-primary rounded-4 page-link">
-                    ← Volver al menú
+                <a href="menu.html" class="btn btn-danger rounded-4 page-link shadow-sm px-2 py-2 hover-lift" style="background-color: #dc3545 !important; color: white !important; border-color: #dc3545 !important;">
+                ← Volver al menú
                 </a>
             </div>
         </div>
@@ -48,7 +49,7 @@
                                 <label for="monto" class="form-label fw-medium">Monto a depositar</label>
                                 <div class="input-group input-group-lg">
                                     <span class="input-group-text rounded-start-4">$</span>
-                                    <input type="number" class="form-control form-control-lg rounded-end-4" id="monto" min="500" step="10" placeholder="Ej: 100" required>
+                                    <input type="number" class="form-control form-control-lg rounded-end-4" id="monto" min="500" step="10" placeholder="Ej: 500" required>
                                 </div>
                                 <div class="form-text mt-2">Ingresa el monto que deseas depositar en tu cuenta.</div>
                             </div>
@@ -57,10 +58,10 @@
                             <div class="mb-4">
                                 <label class="form-label fw-medium mb-2">Monto rápido</label>
                                 <div class="d-flex flex-wrap gap-2">
-                                    <button type="button" class="btn btn-outline-primary rounded-4 quick-amount" data-amount="100">$100</button>
                                     <button type="button" class="btn btn-outline-primary rounded-4 quick-amount" data-amount="500">$500</button>
-                                    <button type="button" class="btn btn-outline-primary rounded-4 quick-amount" data-amount="1000">$1,000</button>
+                                    <button type="button" class="btn btn-outline-primary rounded-4 quick-amount" data-amount="1000">$1000</button>
                                     <button type="button" class="btn btn-outline-primary rounded-4 quick-amount" data-amount="5000">$5,000</button>
+                                    <button type="button" class="btn btn-outline-primary rounded-4 quick-amount" data-amount="10000">$10,000</button>
                                 </div>
                             </div>
 
@@ -83,7 +84,7 @@
                 </div>
 
                 
-                <div class="card border-0 bg-primary bg-opacity-10 rounded-4 mt-4">
+                <div class="card border-0 bg-white bg-opacity-60 rounded-4 mt-4 bg">
                     <div class="card-body p-4">
                         <h5 class="fw-bold mb-3">💡 Información importante</h5>
                         <ul class="list-unstyled mb-0">

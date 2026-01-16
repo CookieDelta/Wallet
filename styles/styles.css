@@ -227,3 +227,114 @@ button:hover {
 .btn-transition:active {
     transform: translateY(0);
 }
+
+/*lista autocompletado*/
+
+#resultadosBusqueda .list-group {
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.contacto-item {
+    border: none;
+    border-bottom: 1px solid #eee;
+    padding: 12px 16px;
+    transition: all 0.2s ease;
+}
+
+.contacto-item:hover {
+    background-color: #f8f9fa;
+    transform: translateX(4px);
+}
+
+.contacto-item:last-child {
+    border-bottom: none;
+}
+
+.fs-smaller .form-label,
+.fs-smaller .form-control,
+.fs-smaller .form-select,
+.fs-smaller .form-text,
+.fs-smaller .btn,
+.fs-smaller h5 {
+    font-size: 0.95rem !important;
+}
+
+.fs-smaller .form-control-lg,
+.fs-smaller .form-select-lg {
+    font-size: 1rem !important;
+    padding: 0.05rem 1rem;
+    height: calc(2.5rem + 2px);
+}
+
+.fs-smaller .input-group-lg > .form-control,
+.fs-smaller .input-group-lg > .form-select {
+    font-size: 1rem !important;
+}
+
+.contacto-item:hover {
+    background-color: #f8f9fa;
+    transform: translateX(2px);
+}
+
+.contacto-item:last-child {
+    border-bottom: none;
+}
+
+/* Ajustar tamaño de fuente general para formularios */
+.form-control, .form-select, .form-label {
+    font-size: 0.95rem;
+}
+
+
+#contactoCombo {
+    cursor: pointer;
+    background-color: white;
+}
+
+#contactoCombo:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+#listaContactos {
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #dee2e6;
+}
+
+#listaContactos .list-group {
+    border-radius: 0.5rem;
+}
+
+.contacto-item {
+    border: none;
+    border-bottom: 1px solid #eee;
+    padding: 12px 16px;
+    transition: all 0.2s ease;
+    text-align: left;
+}
+
+.contacto-item:hover {
+    background-color: #f8f9fa;
+    transform: translateX(3px);
+}
+
+.contacto-item:last-child {
+    border-bottom: none;
+}
+
+.contacto-item small {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* Reducir tamaño de fuente en formulario */
+.fs-smaller .form-control,
+.fs-smaller .form-select,
+.fs-smaller .form-label {
+    font-size: 0.95rem;
+}

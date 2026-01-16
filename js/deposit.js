@@ -49,10 +49,57 @@ document.addEventListener('DOMContentLoaded', function(){
         });
         localStorage.setItem('transacciones', JSON.stringify(transacciones));
 
-        mensaje.textContent = 'Has realizado un deposito por: $ ' +monto +  ' Nuevo saldo: $ '+nuevoSaldo+ '   Espere mientras es redirigido a la página principal...'; 
+        // Modal de éxito
+        const segundos = 5;
+        let tiempoRestante = segundos;
+
+        const modalHTML = `
+        <div class="modal fade show" id="successModal" tabindex="-1" style="display: block; background-color: rgba(0,0,0,0.5)">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content border-0 rounded-4 shadow-lg">
+                    <div class="modal-body p-4 text-center">
+                        <div class="mb-3">
+                            <div class="bg-success bg-opacity-10 rounded-circle d-inline-flex p-3">
+                                <span class="display-6">💰</span>
+                            </div>
+                        </div>
+                        <h4 class="fw-bold text-success mb-2">¡Depósito exitoso!</h4>
+                        <p class="mb-1">Se depositaron <strong>$${monto.toFixed(0)}</strong> en tu cuenta</p>
+                        <p class="mb-3">Nuevo saldo: <strong class="text-success">$${nuevoSaldo.toFixed(0)}</strong></p>
+                        
+                        <div class="progress mb-3" style="height: 6px;">
+                            <div class="progress-bar bg-success" id="countdownBar" style="width: 100%"></div>
+                        </div>
+                        
+                        <p class="text-muted small mb-0">
+                            Redirigiendo en <span id="countdownText">${tiempoRestante}</span> segundos...
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `;
+
+        // Agregar modal al body
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+        // Countdown
+        const countdownInterval = setInterval(() => {
+            tiempoRestante--;
+            document.getElementById('countdownText').textContent = tiempoRestante;
+            const porcentaje = (tiempoRestante / segundos) * 100;
+            document.getElementById('countdownBar').style.width = `${porcentaje}%`;
+            
+            if (tiempoRestante <= 0) {
+                clearInterval(countdownInterval);
+                window.location.href = 'menu.html';
+            }
+        }, 1000);
 
         form.reset();
-        setTimeout(() => window.location.href = 'menu.html', 5000);
+       
+        mensaje.textContent = '';
+        mensaje.style.color = '';
 
     });
 

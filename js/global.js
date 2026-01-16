@@ -5,7 +5,7 @@ $(document).ready(function() {
     // Agregar clase de transición a todas las páginas
     $('body').addClass('page-transition');
     
-    // Crear overlay de carga si no existe
+    // Overlay de carga
     if ($('#pageLoadingOverlay').length === 0) {
         $('body').append(`
             <div id="pageLoadingOverlay">
@@ -19,7 +19,7 @@ $(document).ready(function() {
         `);
     }
     
-    // Función para navegar con transición
+    
     window.navigateWithTransition = function(url, callback) {
         
         $('#pageLoadingOverlay').fadeIn(300);
@@ -38,7 +38,7 @@ $(document).ready(function() {
         return false;
     };
     
-    //.page-link
+    //.page-link a css
     $('a.page-link').on('click', function(e) {
         e.preventDefault();
         const href = $(this).attr('href');
