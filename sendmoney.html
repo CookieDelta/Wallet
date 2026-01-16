@@ -1,16 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Enviar Dinero - Alke Wallet</title>
 </head>
 <body>
-        <label>Nombre Destinatario</label>
-        <input type="text" id="nonbreDest" required>
-        <option value="">Seleccionar banco</option>
-        <option value="BancoEstado"></option>
-        <option value="Banco de Chile"></option>
-        <option value="Santander"></option>
+    <h1>Enviar Dinero</h1>
+    <a href="menu.html">← Volver al Dashboard</a>
+    <br><br>
+    
+    <form id="sendForm">
+        <label>Nombre Destinatario:</label><br>
+        <input type="text" id="nombreDest" placeholder="Juan Pérez" required><br><br>
+        
+        <label>RUT Destinatario:</label><br>
+        <input type="text" id="rut" placeholder="12.345.678-9" required><br><br>
+        
+        <label>Banco:</label><br>
+        <select id="banco" required>
+            <option value="">Seleccionar banco</option>
+            <option value="Banco Estado">Banco Estado</option>
+            <option value="Banco de Chile">Banco de Chile</option>
+            <option value="Santander">Santander</option>
+            <option value="BCI">BCI</option>
+            <option value="Scotiabank">Scotiabank</option>
+        </select><br><br>
+        
+        <label>Tipo de Cuenta:</label><br>
+        <select id="tipoCuenta" required>
+            <option value="">Seleccionar tipo</option>
+            <option value="vista">Vista</option>
+            <option value="corriente">Corriente</option>
+            <option value="ahorro">Ahorro</option>
+        </select><br><br>
+        
+        <label>Monto:</label><br>
+        <input type="number" id="monto" min="1" step="0.01" required><br><br>
+        
+        <button type="submit">Enviar Dinero</button>
+    </form>
+    
+    <p id="mensaje"></p>
+    
+    <script src="js/sendmoney.js"></script>
 </body>
 </html>

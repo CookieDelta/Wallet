@@ -31,13 +31,15 @@ document.addEventListener('DOMContentLoaded', function(){
         transacciones.unshift({
             tipo:'Depósito',
             monto: monto,
-            fecha: new Date().toLocaleString()
+            fecha: new Date().toLocaleString(),
+            descripcion: "Depósito a cuenta propia"
         });
         localStorage.setItem('transacciones', JSON.stringify(transacciones));
 
-        mensaje.textContent = 'Has realizado un deposito por: $ ' +monto +  ' Nuevo saldo: $ '+nuevoSaldo; 
+        mensaje.textContent = 'Has realizado un deposito por: $ ' +monto +  ' Nuevo saldo: $ '+nuevoSaldo+ '   Espere mientras es redirigido a la página principal...'; 
 
         form.reset();
+        setTimeout(() => window.location.href = 'menu.html', 5000);
 
     });
 
