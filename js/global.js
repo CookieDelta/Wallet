@@ -1,6 +1,3 @@
-/* Transiciones globales para páginas, con JQuery */
-
-// GLOBAL.JS - Maneja transiciones entre páginas para TODO el sitio
 
 $(document).ready(function() {
     console.log('Global.js cargado - Transiciones activadas');
@@ -24,13 +21,13 @@ $(document).ready(function() {
     
     // Función para navegar con transición
     window.navigateWithTransition = function(url, callback) {
-        // Mostrar overlay
+        
         $('#pageLoadingOverlay').fadeIn(300);
         
-        // Animación de salida
+
         $('body').addClass('page-exit');
         
-        // Esperar animación y navegar
+        
         setTimeout(function() {
             if (callback && typeof callback === 'function') {
                 callback();
@@ -41,14 +38,14 @@ $(document).ready(function() {
         return false;
     };
     
-    // SOLO aplicar a enlaces específicos con clase .page-link
+    //.page-link
     $('a.page-link').on('click', function(e) {
         e.preventDefault();
         const href = $(this).attr('href');
         window.navigateWithTransition(href);
     });
     
-    // Para botones con clase .page-btn
+    
     $('button.page-btn, .btn.page-btn').on('click', function() {
         const url = $(this).data('href') || $(this).attr('href');
         if (url) {
@@ -61,7 +58,7 @@ $(document).ready(function() {
         $('body').removeClass('page-enter');
     }, 100);
     
-    // Para debugging
+    // debug
     console.log('Transiciones configuradas para:');
     console.log('- Enlaces con clase .page-link:', $('a.page-link').length);
     console.log('- Botones con clase .page-btn:', $('.page-btn').length);

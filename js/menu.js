@@ -49,6 +49,7 @@ $(document).ready(function() { //animacion
 
     $('#logoutLink').on('click', function(e) {
         e.preventDefault();
+        e.stopPropagation();
         
         console.log('Cerrando sesión...');
         
